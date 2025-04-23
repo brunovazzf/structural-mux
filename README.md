@@ -1,18 +1,20 @@
-# Verilog estrutural, instanciando e conectando módulos
+# Verilog estrutural, instanciando e conectando módulos novamente
 
-Implemente o circuito no arquivo `top.v` conforme a figura a abaixo e as instruções a seguir:
+Implemente um multiplexador de 4x1 a partir da combinação de várias instâncias do módulo fornecido:
 
-![Circuito desejado](mods.png)
+```verilog
+module mux2byte (
+    input [7:0] a, b, 
+    input sel, 
+    output [7:0] out);
+    assign out = sel ? b : a;
+endmodule
+```
 
-- Use os mesmos nomes para os fios, pois isso é importante para que o teste seja bem sucedido. 
-- Observe os módulos `ma` e `mb` instanciados duas vezes cada um deles:
-    - Faça as ligações **por posição** quando eles forem totalmente conectados (`ib1` e `ia2`);
-    - Faça as ligações **por nome** quando eles tiverem portas desconectadas (`ia1` e `ib2`);
-    - Use as **primitivas básicas** da linguagem Verilog ao invés `assign` para gerar as portas `and`, `or` e `xor` que aparecem no circuito.
-
+- Note que cada porta recebe um byte e não um único fio;
+- Por isso, é necessário declarar os fios intermediários; 
+- Instancie e ligue os muxes que julgar necessários;
 
 # Referências
 
-- https://hdlbits.01xz.net/wiki/Module
-- https://hdlbits.01xz.net/wiki/Mt2015_q4
-- https://www.chipverify.com/verilog/verilog-net-types
+- https://hdlbits.01xz.net/wiki/Bugs_mux4

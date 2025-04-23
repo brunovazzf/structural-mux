@@ -1,5 +1,5 @@
 cd tests
-iverilog -o tb tb.v ../*.v
+iverilog -o tb mux_tb.v ../*.v
 rm -f top.out
 ./tb > top.out
 
