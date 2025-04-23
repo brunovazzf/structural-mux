@@ -4,4 +4,3 @@
 |   2| fe|
 |   1| ba|
 |   0| be|
-mux_tb.v:15: $finish called at 4 (1s)
